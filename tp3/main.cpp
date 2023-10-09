@@ -1,10 +1,14 @@
 #include <iostream>
-#include <vector>
-
 using namespace std;
-
-
-int jouer(int tab)
+int test(int** tab,const int n){
+    int i =0;
+    while (true) {
+        if (tab[i][n] != 0){return i; break;}
+        i=i+1;
+        if(i == 6){return i; break;}
+    }
+}
+int jouer(int** tab)
 {
     int i=5;
     int j;
@@ -13,11 +17,10 @@ int jouer(int tab)
     {
         cout << "entrez la colonne souhaité" << endl;
         cin >> j;
-        while(tab[i][j] != 0)
-        {
-            i -= 1;
 
-        }
+        if (test(tab,j) == 6) {
+            cout<< "remplis";
+        } //FINIR ICI!
         if(j1 == true)
         {
             tab[i][j] = 1;
@@ -32,10 +35,9 @@ int jouer(int tab)
     }
 
 }
-
 int main()
 {
-
+    int aa;
     int tab[6][7];
     int i, j;
 
@@ -48,5 +50,8 @@ int main()
 
         }
     }
+    aa = test(tab,5);
+    cout << aa;
     return 0;
 }
+
